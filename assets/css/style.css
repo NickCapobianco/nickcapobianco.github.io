@@ -324,7 +324,7 @@ h3 {
   width: 100%;
 }
 
-.waves-effect.waves-blue .waves-ripple {
+.waves-effect.waves-dark {
   /* The alpha value allows the text and background color
    of the button to still show through. */
   background-color: rgba(33, 150, 243, 0.25);
