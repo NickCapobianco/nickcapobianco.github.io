@@ -1,2 +1,2 @@
-# NickCapobianco.github.io
-My personal site
+# nickcapobianco.github.io
+Welcome to my website!
