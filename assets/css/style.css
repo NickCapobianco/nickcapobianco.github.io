@@ -128,12 +128,6 @@ body {
   font-size: 18px;
 }
 
-/* main a -- links */
-
-#sakura {
-	color: #fcc9b9;
-}
-
 /* main blockqoute */
 
 blockquote {
@@ -548,6 +542,7 @@ small {
   }
   h3 {
 	text-align: center;
+	color: #C14D29;
     padding: 20px 30px;
     margin-bottom: 40px;
   }
