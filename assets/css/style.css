@@ -227,17 +227,9 @@ ul.side-nav li {
   padding: 0;
 }
 
-/* ul.side-nav.fixed a {
-  box-sizing: content-box;
-  color: rgb(48, 122, 207);
-  display: block;
-  line-height: 100%;
-  padding: 10px 0 12px;
-} */
 
 ul.side-nav.fixed a {
   box-sizing: content-box;
-  color: rgb(16, 202, 56);
   display: block;
   line-height: 100%;
   padding: 10px 0 12px;
@@ -248,16 +240,8 @@ ul.table-of-contents li.logo a.active, ul.table-of-contents li.logo a:hover {
   font-weight: 200;
 }
 
-/* ul.side-nav.fixed li.logo {
-  background-color: #fafafa;
-  border-bottom: 1px solid #ddd;
-  box-sizing: content-box;
-  min-height: 90px;
-  padding: 30px 30px 40px;
-} */
-
 ul.side-nav.fixed li.logo {
-  background-color: #fafafa;
+  background-color: #EEEEEE;
   border-bottom: 1px solid #ddd;
   box-sizing: content-box;
   min-height: 90px;
@@ -317,6 +301,7 @@ h3 {
 
 #intro.section {
   background-image: url("/assets/img/japan.png");
+opacity: 0.96;
   position: relative;
 }
 
@@ -556,6 +541,7 @@ small {
 
 .red {
   background-color: #BA3535 !important;
+  opacity: 0.9;
 }
 
 /* .yellow-text */
