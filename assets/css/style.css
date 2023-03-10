@@ -11,7 +11,7 @@
   /* background-size: cover;  */
   margin: -31px; 
   margin-left:-7px;
-  border: 6px solid rgba(0, 77, 64, 0.4); 
+  border: 6px solid rgba(0, 0, 0, 0.22); 
   border-radius: 50% !important;
 }
 
@@ -295,6 +295,7 @@ li.logo span {
 }
 
 h3 {
+  text-align: center;
   font-weight: 200;
   margin-bottom: 60px;
   margin-top: 0;
@@ -549,22 +550,15 @@ small {
 /* main .red-text */
 
 .red-text {
-  color: #008073 !important;
+  color: #D64315 !important;
 }
 
-/* .red-text {
-  color: #0b5e86 !important;
-} */
 
 /* .red */
 
 .red {
-  background-color: #008073 !important;
+  background-color: #D64315 !important;
 }
-
-/* .red {
-  background-color: #00695c !important;
-} */
 
 @media (min-width: 1200px) {
   #experience .container {
