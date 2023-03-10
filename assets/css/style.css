@@ -11,7 +11,7 @@
   /* background-size: cover;  */
   margin: -31px; 
   margin-left:-7px;
-  border: 6px solid rgba(223,177,182,1.00); 
+  border: 6px solid rgba(0, 77, 64, 0.4); 
   border-radius: 50% !important;
 }
 
@@ -124,11 +124,35 @@
 /* body-color */
 
 body {
-  /*color: #333;*/
+  color: #333;
   font-size: 18px;
 }
 
+/* body {
+  color: black;
+  font-size: 18px;
+} */
+
+/* main a -- links */
+
+/* a {
+  color: #009688;
+} */
+
+a {
+  color: #004d40;
+}
+
 /* main blockqoute */
+
+/* blockquote {
+  border-left: 5px solid #795548;
+  color: #795548;
+  font-size: 125%;
+  font-weight: 400;
+  margin: 20px 0;
+  padding-left: 1.5rem;
+} */
 
 blockquote {
   border-left: 5px solid #795548;
@@ -203,6 +227,14 @@ ul.side-nav li {
   padding: 0;
 }
 
+/* ul.side-nav.fixed a {
+  box-sizing: content-box;
+  color: rgb(48, 122, 207);
+  display: block;
+  line-height: 100%;
+  padding: 10px 0 12px;
+} */
+
 ul.side-nav.fixed a {
   box-sizing: content-box;
   color: rgb(16, 202, 56);
@@ -215,6 +247,14 @@ ul.table-of-contents li.logo a.active, ul.table-of-contents li.logo a:hover {
   border: none;
   font-weight: 200;
 }
+
+/* ul.side-nav.fixed li.logo {
+  background-color: #fafafa;
+  border-bottom: 1px solid #ddd;
+  box-sizing: content-box;
+  min-height: 90px;
+  padding: 30px 30px 40px;
+} */
 
 ul.side-nav.fixed li.logo {
   background-color: #fafafa;
@@ -280,8 +320,7 @@ h3 {
 } */
 
 #intro.section {
-  /*background: #a7ffeb repeat;*/
-  background-image: url("/assets/img/japan.png");
+  background: #a7ffeb repeat;
   position: relative;
 }
 
@@ -292,6 +331,13 @@ h3 {
   position: absolute;
   top: 0;
 }
+
+/* #intro.section .container *:not(span) {
+  font-weight: 300;
+  line-height: 150%;
+  padding: 0 30px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+} */
 
 #intro.section .container *:not(span) {
   font-weight: 300;
@@ -305,7 +351,7 @@ h3 {
   border-bottom: 5px solid #24305e;
 }
 
-#intro.section {
+#intro.section .red {
   padding: 0 10px;
 }
 
@@ -318,10 +364,10 @@ h3 {
   width: 100%;
 }
 
-.waves-effect.waves-dark {
+.waves-effect.waves-blue .waves-ripple {
   /* The alpha value allows the text and background color
    of the button to still show through. */
-  background-color: rgba(33, 150, 243, 0.25);
+  background-color: rgba(33, 150, 243, 0.2);
 }
 
 .card {
@@ -500,6 +546,26 @@ small {
   color: #666 !important;
 }
 
+/* main .red-text */
+
+.red-text {
+  color: #008073 !important;
+}
+
+/* .red-text {
+  color: #0b5e86 !important;
+} */
+
+/* .red */
+
+.red {
+  background-color: #008073 !important;
+}
+
+/* .red {
+  background-color: #00695c !important;
+} */
+
 @media (min-width: 1200px) {
   #experience .container {
     width: 860px;
@@ -541,7 +607,6 @@ small {
     line-height: 56px;
   }
   h3 {
-	text-align: center;
     padding: 20px 30px;
     margin-bottom: 40px;
   }
