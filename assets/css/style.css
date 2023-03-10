@@ -140,7 +140,7 @@ body {
 } */
 
 a {
-  color: #004d40;
+  color: #BA3535;
 }
 
 /* main blockqoute */
@@ -556,7 +556,7 @@ small {
 /* .namebg */
 
 .namebg {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 @media (min-width: 1200px) {
