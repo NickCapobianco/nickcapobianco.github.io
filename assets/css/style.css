@@ -10,7 +10,7 @@
   
   /* background-size: cover;  */
   margin: -31px; 
-  margin-left:-7px;
+  margin-left:10px;
   border: 6px solid rgba(0, 0, 0, 0.22); 
   border-radius: 50% !important;
 }
@@ -270,7 +270,7 @@ ul.side-nav.fixed li.logo a {
 }
 
 ul.table-of-contents li:not(.logo) a.active, ul.table-of-contents li:not(.logo) a:hover {
-  background-color: #fafafa;
+  background-color: #EEEEEE;
   border-left: 3px solid;
 }
 
@@ -315,11 +315,6 @@ h3 {
 
 /* Original */
 
-/* #intro.section {
-  background: url(../../assets/img/white-ai-wallpaper.jpg) no-repeat top center/cover;
-  position: relative;
-} */
-
 #intro.section {
   background-image: url("/assets/img/japan.png");
   position: relative;
@@ -332,13 +327,6 @@ h3 {
   position: absolute;
   top: 0;
 }
-
-/* #intro.section .container *:not(span) {
-  font-weight: 300;
-  line-height: 150%;
-  padding: 0 30px;
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
-} */
 
 #intro.section .container *:not(span) {
   font-weight: 300;
@@ -357,7 +345,6 @@ h3 {
 }
 
 .overlay {
-  background-color: rgba(0, 0, 0, 0.4);
   height: 100%;
   left: 0;
   position: absolute;
@@ -365,10 +352,10 @@ h3 {
   width: 100%;
 }
 
-.waves-effect.waves-blue .waves-ripple {
+.waves-effect.waves-red .waves-ripple {
   /* The alpha value allows the text and background color
    of the button to still show through. */
-  background-color: rgba(33, 150, 243, 0.2);
+  background-color: rgba(255, 13, 13, 0.25);
 }
 
 .card {
@@ -550,14 +537,20 @@ small {
 /* main .red-text */
 
 .red-text {
-  color: #D64315 !important;
+  color: #BA3535 !important;
 }
 
 
 /* .red */
 
 .red {
-  background-color: #D64315 !important;
+  background-color: #BA3535 !important;
+}
+
+/* Yellow */
+
+.yellow {
+	color: #FFF700;
 }
 
 @media (min-width: 1200px) {
