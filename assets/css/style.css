@@ -321,7 +321,7 @@ h3 {
 } */
 
 #intro.section {
-  background: #a7ffeb repeat;
+  background-image: url("/assets/img/japan.png");
   position: relative;
 }
 
