@@ -13,7 +13,7 @@
 ### Website Preview
 <p align="center"> 
   <kbd>
-    <a href="https://nickcapobianco.github.io" target="_blank"><img src="assets/img/site_preview.gif">
+    <a href="https://nickcapobianco.github.io" target="_blank"><img src="assets/img/preview.gif">
   </a>
   </kbd>
 </p>
