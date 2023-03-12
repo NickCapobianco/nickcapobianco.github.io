@@ -58,7 +58,8 @@ To view a live example, **[click here](https://nickcapobianco.github.io/)**
 
 - **Push the generated code to the `master` or `main` branch of this repository** :arrow_up:
 
-
+#### Step 4
+- **Share with the world** :recycle:
 
 ## License 📄
 This project is licensed under the MIT License - see the [LICENSE.md](./LICENSE) file for details.
