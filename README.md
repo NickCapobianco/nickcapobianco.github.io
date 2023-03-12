@@ -5,9 +5,10 @@
 
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
 
-### Website Preview
+## Website Preview
 <p align="center"> 
-	<img src="assets/img/preview.gif">
+	<a href="https://nickcapobianco.github.io" target="_blank"><img src="assets/img/preview.gif">
+  </a>
 </p>
 
 ## Features 📋
@@ -15,6 +16,7 @@
 ⚡️ Valid HTML5 & CSS3\
 ⚡️ Typing animation using `Typed.js`\
 ⚡️ Easy to modify
+⚡️ Automatic (0,0) repositioning upon page refresh
 
 ## Installation & Deployment 📦
 - Clone the repository and modify the contents of <b>index.html</b> according to your requirements.
@@ -32,8 +34,6 @@
 ✔️ Education\
 ✔️ Contact Info\
 ✔️ Resume
-
-To view a live example, **[click here](https://nickcapobianco.github.io/)**
 
 ## Tools Used 🛠️
 * [<b>GitHub Pages</b>](https://create-react-app.dev/docs/deployment/#github-pages) - To host the website (HTML, CSS, JS).
