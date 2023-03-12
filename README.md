@@ -12,10 +12,7 @@
 
 ### Website Preview
 <p align="center"> 
-  <kbd>
-    <a href="https://nickcapobianco.github.io" target="_blank"><img src="assets/img/preview.gif">
-  </a>
-  </kbd>
+	<img src="assets/img/preview.gif">
 </p>
 
 :star: Star me on GitHub — it helps!
