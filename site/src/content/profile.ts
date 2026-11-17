@@ -30,7 +30,7 @@ export const profile = {
     "Nature",
   ],
   highlights: [
-    { value: "8+ yrs", label: "Engineering experience" },
+    { value: "3+ yrs", label: "Leading operations" },
     { value: "COO", label: "Coastal Marketing Group" },
     { value: "M.S.", label: "Computer Science, UNLV" },
     { value: "2", label: "Continents lived on" },
