@@ -31,7 +31,7 @@ export const projects: Project[] = [
       "Formula-based pricing with a standard monthly price sheet.",
       "Automated P&L and contractor commission reports.",
       "QuickBooks Online setup and sync for invoices, bills, and payments.",
-      "Partner portal where contractors see their orders and statements.",
+      "Partner portal where customers and contractors see their orders and statements.",
     ],
     stack: ["Next.js", "TypeScript", "PostgreSQL", "QuickBooks Online"],
     showcase: "browser",
