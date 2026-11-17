@@ -21,32 +21,63 @@ import {
   UserCog,
   Users,
 } from "lucide-react";
+import {
+  Customers,
+  Documents,
+  Features,
+  Messages,
+  PendingReview,
+  Pricing,
+  Products,
+  Tasks,
+  UploadPage,
+  UsersPage,
+  Vendors,
+  head,
+  panel,
+} from "./CmgSamplePages";
 
 /**
  * Clickable mock of the CMG operations platform, styled after the real
  * portal (light card rail, colour-tiled icons, navy active item). Every
  * name and number here is made up.
  */
-type View = "dashboard" | "orders" | "reports" | "qboSetup" | "qbo";
+type View =
+  | "dashboard"
+  | "tasks"
+  | "orders"
+  | "customers"
+  | "vendors"
+  | "pricing"
+  | "products"
+  | "reports"
+  | "messages"
+  | "features"
+  | "upload"
+  | "pending"
+  | "documents"
+  | "users"
+  | "qboSetup"
+  | "qbo";
 
 type NavItem = { label: string; icon: ComponentType<SVGProps<SVGSVGElement>>; tone: string; view?: View };
 
 /** The portal's full side panel. Items with a `view` open a page in this preview. */
 const NAV: NavItem[] = [
   { label: "Dashboard", icon: Gauge, tone: "#2563EB", view: "dashboard" },
-  { label: "Tasks", icon: ListChecks, tone: "#D97706" },
+  { label: "Tasks", icon: ListChecks, tone: "#D97706", view: "tasks" },
   { label: "Orders", icon: ShoppingCart, tone: "#059669", view: "orders" },
-  { label: "Customers", icon: Users, tone: "#7C3AED" },
-  { label: "Vendors", icon: Truck, tone: "#EA580C" },
-  { label: "Pricing", icon: DollarSign, tone: "#16A34A" },
-  { label: "Products", icon: Boxes, tone: "#0284C7" },
+  { label: "Customers", icon: Users, tone: "#7C3AED", view: "customers" },
+  { label: "Vendors", icon: Truck, tone: "#EA580C", view: "vendors" },
+  { label: "Pricing", icon: DollarSign, tone: "#16A34A", view: "pricing" },
+  { label: "Products", icon: Boxes, tone: "#0284C7", view: "products" },
   { label: "Reports", icon: BarChart3, tone: "#4F46E5", view: "reports" },
-  { label: "Messages", icon: MessageSquare, tone: "#DB2777" },
-  { label: "Features/Bugs", icon: Sparkles, tone: "#C026D3" },
-  { label: "Upload", icon: Upload, tone: "#0D9488" },
-  { label: "Pending Review", icon: Archive, tone: "#E11D48" },
-  { label: "Documents", icon: Folder, tone: "#CA8A04" },
-  { label: "Users", icon: UserCog, tone: "#475569" },
+  { label: "Messages", icon: MessageSquare, tone: "#DB2777", view: "messages" },
+  { label: "Features/Bugs", icon: Sparkles, tone: "#C026D3", view: "features" },
+  { label: "Upload", icon: Upload, tone: "#0D9488", view: "upload" },
+  { label: "Pending Review", icon: Archive, tone: "#E11D48", view: "pending" },
+  { label: "Documents", icon: Folder, tone: "#CA8A04", view: "documents" },
+  { label: "Users", icon: UserCog, tone: "#475569", view: "users" },
   { label: "QBO Setup", icon: Link2, tone: "#2CA01C", view: "qboSetup" },
   { label: "QBO Sync", icon: RefreshCw, tone: "#2CA01C", view: "qbo" },
 ];
@@ -79,9 +110,6 @@ const STATUS_STYLE = {
   Shipped: "bg-blue-50 text-blue-700 dark:bg-blue-500/15 dark:text-blue-300",
   Open: "bg-amber-50 text-amber-700 dark:bg-amber-500/15 dark:text-amber-300",
 };
-
-const panel = "rounded-lg border border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-800";
-const head = "border-b border-slate-200 px-3 py-2 text-[11px] font-semibold dark:border-slate-700";
 
 function Dashboard() {
   const kpis: [string, string, string][] = [
@@ -329,6 +357,17 @@ const VIEWS: Record<View, () => React.JSX.Element> = {
   dashboard: Dashboard,
   orders: Orders,
   reports: Reports,
+  tasks: Tasks,
+  customers: Customers,
+  vendors: Vendors,
+  pricing: Pricing,
+  products: Products,
+  messages: Messages,
+  features: Features,
+  upload: UploadPage,
+  pending: PendingReview,
+  documents: Documents,
+  users: UsersPage,
   qboSetup: QboSetup,
   qbo: QboSync,
 };
@@ -349,7 +388,16 @@ export function BrowserShowcase() {
             <span className="size-2.5 rounded-full bg-[#28C840]" />
           </span>
           <span className="mx-auto truncate rounded-md bg-white px-3 py-0.5 text-[10px] text-slate-500 dark:bg-slate-900 dark:text-slate-400">
-            portal.example.com/{view === "qboSetup" ? "qbo/setup" : view === "qbo" ? "qbo/sync" : view}
+            portal.example.com/
+            {view === "qboSetup"
+              ? "qbo/setup"
+              : view === "qbo"
+                ? "qbo/sync"
+                : view === "pending"
+                  ? "pending-approval"
+                  : view === "features"
+                    ? "feature-requests"
+                    : view}
           </span>
         </div>
 
@@ -402,7 +450,7 @@ export function BrowserShowcase() {
         </div>
       </div>
       <p className="text-center text-[11px] text-subtle">
-        Click the highlighted pages. All names and numbers are sample data.
+        Click any page in the side panel. All names and numbers are sample data.
       </p>
     </div>
   );
