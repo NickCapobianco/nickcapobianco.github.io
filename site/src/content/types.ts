@@ -12,6 +12,10 @@ export type Role = {
   /** Omit for a current role. */
   end?: string;
   summary?: string;
+  /** Responsibilities carried over from the previous role. */
+  kept?: string[];
+  /** Responsibilities this role added. */
+  added?: string[];
 };
 
 export type Experience = {

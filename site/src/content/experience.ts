@@ -11,21 +11,35 @@ export const experience: Experience[] = [
       {
         title: "Chief Operating Officer",
         start: "Dec 2025",
-        summary: "Lead operations, finance, and technology.",
+        summary:
+          "Took over the rest of the business on top of finance, operations, and IT: federal taxes, compliance, vehicle registrations, product pricing, and the company website.",
+        kept: ["IT", "Operations", "Finance"],
+        added: ["Taxes & compliance", "Pricing", "Website"],
       },
       {
         title: "Chief Financial Officer",
         start: "Jul 2025",
         end: "Dec 2025",
-        summary: "Managed all company finances.",
+        summary: "Added the company's finances while continuing to run operations and IT.",
+        kept: ["IT", "Operations"],
+        added: ["Finance"],
       },
       {
         title: "Director of Operations",
         start: "Mar 2024",
         end: "Jul 2025",
-        summary: "Overhauled pricing, commission tracking, and budgeting.",
+        summary:
+          "Took on operations while continuing to run IT. Overhauled pricing, commission tracking, and budgeting.",
+        kept: ["IT"],
+        added: ["Operations"],
       },
-      { title: "IT Support (Part-time)", start: "Aug 2023", end: "Mar 2024", summary: "Built out the company's IT." },
+      {
+        title: "IT Support (Part-time)",
+        start: "Aug 2023",
+        end: "Mar 2024",
+        summary: "Built out the company's IT.",
+        added: ["IT"],
+      },
     ],
     highlights: [
       "Lead day-to-day operations, finance, pricing, and contractor commissions.",

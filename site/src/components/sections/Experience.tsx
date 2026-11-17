@@ -43,6 +43,22 @@ function RoleLadder({ item }: { item: ExperienceItem }) {
                 <p className="font-mono text-[11px] text-subtle">{range(role.start, role.end)}</p>
               </div>
               {role.summary ? <p className="mt-1 text-sm text-subtle">{role.summary}</p> : null}
+              {role.kept?.length || role.added?.length ? (
+                <ul className="mt-2 flex flex-wrap gap-1" aria-label="Responsibilities">
+                  {role.kept?.map((r) => (
+                    <li key={r} className="rounded-full bg-surface-2 px-2 py-0.5 text-[11px] text-subtle">
+                      {r}
+                    </li>
+                  ))}
+                  {role.added?.map((r) => (
+                    <li key={r} className="rounded-full bg-accent-soft px-2 py-0.5 text-[11px] font-medium text-accent">
+                      <span aria-hidden="true">+ </span>
+                      <span className="sr-only">Added: </span>
+                      {r}
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
             </div>
           </li>
         );
