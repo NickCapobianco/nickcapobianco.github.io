@@ -27,11 +27,11 @@ export const projects: Project[] = [
     summary:
       "The web platform I developed to run Coastal Marketing Group's operations, along with the company website.",
     details: [
-      "Tracks every order from purchase order to invoice.",
-      "Formula-based pricing with a standard monthly price sheet.",
-      "Automated P&L and contractor commission reports.",
-      "QuickBooks Online setup and sync for invoices, bills, and payments.",
-      "Partner portal where customers and contractors see their orders and statements.",
+      "Tracks every order from purchase order to invoice",
+      "Formula-based pricing with a standard monthly price sheet",
+      "Automated P&L and contractor commission reports",
+      "QuickBooks Online setup and sync for invoices, bills, and payments",
+      "Partner portal where customers and contractors see their orders and statements",
     ],
     stack: ["Next.js", "TypeScript", "PostgreSQL", "QuickBooks Online"],
     showcase: "browser",
@@ -55,10 +55,10 @@ export const projects: Project[] = [
     summary:
       "Converted a Traxxas RC boat into an autonomous-ready sensing platform that could be driven from a laptop on a remote lake without Bluetooth.",
     details: [
-      "Ran PyTorch object detection on an NVIDIA Jetson Nano with an Intel RealSense camera, recording footage under way.",
-      "Visualized LIDAR point clouds in RViz over ROS.",
-      "Soldered an SPST override switch into the Traxxas remote for manual takeover.",
-      "Added flotation for the extra payload. The boat held 30+ mph carrying 8 lb of equipment with no water damage.",
+      "Ran PyTorch object detection on an NVIDIA Jetson Nano with an Intel RealSense camera, recording footage under way",
+      "Visualized LIDAR point clouds in RViz over ROS",
+      "Soldered an SPST override switch into the Traxxas remote for manual takeover",
+      "Added flotation for the extra payload. The boat held 30+ mph carrying 8 lb of equipment with no water damage",
     ],
     stack: ["NVIDIA Jetson Nano", "Intel RealSense", "PyTorch", "ROS", "RViz", "LIDAR", "Linux"],
     image: { src: "/images/projects/usv.webp", alt: "The unmanned surface vehicle on the water" },
@@ -71,9 +71,9 @@ export const projects: Project[] = [
     summary:
       "Built a small-scale version of the US Army's Expedient Leader-Follower (ExLF) concept, where an unmanned vehicle follows a human-driven lead vehicle at close range.",
     details: [
-      "Measured distance to a moving object with an ultrasonic rangefinder and held a set following distance.",
-      "Used mecanum wheels and two motor drivers so the vehicle could move diagonally forward and backward.",
-      "Showed live readings on an onboard LCD.",
+      "Measured distance to a moving object with an ultrasonic rangefinder and held a set following distance",
+      "Used mecanum wheels and two motor drivers so the vehicle could move diagonally forward and backward",
+      "Showed live readings on an onboard LCD",
     ],
     stack: ["Arduino Mega 2560", "C++", "Ultrasonic rangefinder", "Mecanum wheels"],
     image: { src: "/images/projects/exlf.webp", alt: "The ExLF autonomous vehicle" },

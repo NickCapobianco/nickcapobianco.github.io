@@ -1,5 +1,6 @@
 "use client";
 
+import { bullet } from "@/lib/text";
 import { useMemo, useState, type ComponentType, type SVGProps } from "react";
 import Image from "next/image";
 import { Bot, Building2, Gamepad2, Smartphone } from "lucide-react";
@@ -65,7 +66,7 @@ function ProjectBody({ project }: { project: Project }) {
           {project.details.map((d) => (
             <li key={d.slice(0, 24)} className="flex gap-2.5">
               <span aria-hidden="true" className="mt-[0.55em] size-1 shrink-0 rounded-full bg-accent" />
-              <span>{d}</span>
+              <span>{bullet(d)}</span>
             </li>
           ))}
         </ul>

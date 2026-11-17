@@ -1,3 +1,4 @@
+import { bullet } from "@/lib/text";
 import Image from "next/image";
 import { ArrowUpRight, MapPin } from "lucide-react";
 import { earlyExperience, experience, volunteering } from "@/content/experience";
@@ -113,7 +114,7 @@ function ExperienceCard({ item, featured }: { item: ExperienceItem; featured?: b
         {item.highlights.map((h) => (
           <li key={h.slice(0, 32)} className="flex gap-3">
             <span aria-hidden="true" className="mt-[0.6em] size-1 shrink-0 rounded-full bg-accent" />
-            <span>{h}</span>
+            <span>{bullet(h)}</span>
           </li>
         ))}
       </ul>
