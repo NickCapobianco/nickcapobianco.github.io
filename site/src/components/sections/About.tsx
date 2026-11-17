@@ -18,11 +18,6 @@ export function About() {
           {profile.about.map((p) => (
             <p key={p.slice(0, 24)}>{p}</p>
           ))}
-          <figure className="!mt-9 border-l-2 border-accent pl-5">
-            <blockquote className="text-lg leading-relaxed font-medium text-balance text-fg">
-              “{profile.ambition}”
-            </blockquote>
-          </figure>
         </Reveal>
 
         <Reveal delay={80}>
