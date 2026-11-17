@@ -1,0 +1,8 @@
+# Source build artifacts (the published site is the committed files at the root)
+site/node_modules/
+site/.next/
+site/out/
+site/next-env.d.ts
+*.tsbuildinfo
+.DS_Store
+.env*
