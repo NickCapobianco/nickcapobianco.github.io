@@ -25,7 +25,14 @@ export const projects: Project[] = [
     period: "Mar 2026 – Present",
     progress: 85,
     summary:
-      "The web platform I developed for Coastal Marketing Group. It handles orders, invoicing, pricing, and automated reporting, syncs with QuickBooks Online, and runs the company website and partner portal.",
+      "The web platform I developed to run Coastal Marketing Group's operations, along with the company website.",
+    details: [
+      "Tracks every order from purchase order to invoice.",
+      "Formula-based pricing with a standard monthly price sheet.",
+      "Automated P&L and contractor commission reports.",
+      "QuickBooks Online setup and sync for invoices, bills, and payments.",
+      "Partner portal where contractors see their orders and statements.",
+    ],
     stack: ["Next.js", "TypeScript", "PostgreSQL", "QuickBooks Online"],
     showcase: "browser",
   },
@@ -38,7 +45,7 @@ export const projects: Project[] = [
     progress: 85,
     summary: "A desktop game for Windows, built in Unity. Gameplay is complete, and I'm now working on the final art.",
     stack: ["Unity", "C#"],
-    wide: true,
+    showcase: "game",
   },
   {
     id: "usv",

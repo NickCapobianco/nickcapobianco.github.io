@@ -10,6 +10,7 @@ import { Reveal } from "../ui/Reveal";
 import { ProgressBar } from "../ui/ProgressBar";
 import { PhoneShowcase } from "../projects/PhoneShowcase";
 import { BrowserShowcase } from "../projects/BrowserShowcase";
+import { GameShowcase } from "../projects/GameShowcase";
 
 type Category = (typeof projectCategories)[number];
 
@@ -89,7 +90,7 @@ function ShowcaseCard({ project }: { project: Project }) {
     <article
       id={`project-${project.id}`}
       className={`grid scroll-mt-24 overflow-hidden card ${
-        project.showcase === "browser" ? "lg:grid-cols-[minmax(0,0.75fr)_minmax(0,1.6fr)]" : "md:grid-cols-[1fr_1.1fr]"
+        project.showcase !== "phone" ? "lg:grid-cols-[minmax(0,0.75fr)_minmax(0,1.6fr)]" : "md:grid-cols-[1fr_1.1fr]"
       }`}
     >
       <div className="flex flex-col p-6 sm:p-8">
@@ -97,12 +98,18 @@ function ShowcaseCard({ project }: { project: Project }) {
       </div>
       <div
         className={`relative border-t border-line bg-surface-2/70 px-4 py-8 ${
-          project.showcase === "browser" ? "lg:border-t-0 lg:border-l" : "md:border-t-0 md:border-l"
+          project.showcase !== "phone" ? "lg:border-t-0 lg:border-l" : "md:border-t-0 md:border-l"
         }`}
       >
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-grid opacity-60" />
         <div className="no-print relative">
-          {project.showcase === "browser" ? <BrowserShowcase /> : <PhoneShowcase />}
+          {project.showcase === "browser" ? (
+            <BrowserShowcase />
+          ) : project.showcase === "game" ? (
+            <GameShowcase />
+          ) : (
+            <PhoneShowcase />
+          )}
         </div>
       </div>
     </article>

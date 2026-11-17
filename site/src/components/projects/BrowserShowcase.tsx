@@ -1,20 +1,54 @@
 "use client";
 
 import { useState, type ComponentType, type SVGProps } from "react";
-import { BarChart3, Check, Gauge, Link2, Loader2, RefreshCw, ShoppingCart } from "lucide-react";
+import {
+  Archive,
+  BarChart3,
+  Boxes,
+  Check,
+  DollarSign,
+  Folder,
+  Gauge,
+  Link2,
+  ListChecks,
+  Loader2,
+  MessageSquare,
+  RefreshCw,
+  ShoppingCart,
+  Sparkles,
+  Truck,
+  Upload,
+  UserCog,
+  Users,
+} from "lucide-react";
 
 /**
  * Clickable mock of the CMG operations platform, styled after the real
  * portal (light card rail, colour-tiled icons, navy active item). Every
  * name and number here is made up.
  */
-type View = "dashboard" | "orders" | "reports" | "qbo";
+type View = "dashboard" | "orders" | "reports" | "qboSetup" | "qbo";
 
-const NAV: { id: View; label: string; icon: ComponentType<SVGProps<SVGSVGElement>>; tone: string }[] = [
-  { id: "dashboard", label: "Dashboard", icon: Gauge, tone: "#2563EB" },
-  { id: "orders", label: "Orders", icon: ShoppingCart, tone: "#059669" },
-  { id: "reports", label: "Reports", icon: BarChart3, tone: "#4F46E5" },
-  { id: "qbo", label: "QBO Sync", icon: RefreshCw, tone: "#2CA01C" },
+type NavItem = { label: string; icon: ComponentType<SVGProps<SVGSVGElement>>; tone: string; view?: View };
+
+/** The portal's full side panel. Items with a `view` open a page in this preview. */
+const NAV: NavItem[] = [
+  { label: "Dashboard", icon: Gauge, tone: "#2563EB", view: "dashboard" },
+  { label: "Tasks", icon: ListChecks, tone: "#D97706" },
+  { label: "Orders", icon: ShoppingCart, tone: "#059669", view: "orders" },
+  { label: "Customers", icon: Users, tone: "#7C3AED" },
+  { label: "Vendors", icon: Truck, tone: "#EA580C" },
+  { label: "Pricing", icon: DollarSign, tone: "#16A34A" },
+  { label: "Products", icon: Boxes, tone: "#0284C7" },
+  { label: "Reports", icon: BarChart3, tone: "#4F46E5", view: "reports" },
+  { label: "Messages", icon: MessageSquare, tone: "#DB2777" },
+  { label: "Features/Bugs", icon: Sparkles, tone: "#C026D3" },
+  { label: "Upload", icon: Upload, tone: "#0D9488" },
+  { label: "Pending Review", icon: Archive, tone: "#E11D48" },
+  { label: "Documents", icon: Folder, tone: "#CA8A04" },
+  { label: "Users", icon: UserCog, tone: "#475569" },
+  { label: "QBO Setup", icon: Link2, tone: "#2CA01C", view: "qboSetup" },
+  { label: "QBO Sync", icon: RefreshCw, tone: "#2CA01C", view: "qbo" },
 ];
 
 const MONTHS: [string, number][] = [
@@ -169,6 +203,72 @@ function Reports() {
   );
 }
 
+function QboSetup() {
+  const mappings: [string, string, string][] = [
+    ["Customer", "Northwind Foods", "154"],
+    ["Customer", "Harbor Grocers", "171"],
+    ["Vendor", "Valley Creamery", "88"],
+    ["Product", "Aged Cheddar 40 lb", "312"],
+  ];
+  const accounts: [string, string][] = [
+    ["COGS account", "5000 Cost of Goods Sold"],
+    ["Pallet account", "5120 Pallets"],
+    ["Fuel account", "5130 Fuel Surcharge"],
+  ];
+  return (
+    <div className="space-y-3">
+      <div className={`${panel} flex items-center gap-3 p-3`}>
+        <span className="grid size-8 place-items-center rounded-lg bg-[#2CA01C] text-white">
+          <Link2 className="size-4" aria-hidden="true" />
+        </span>
+        <div className="min-w-0 flex-1">
+          <p className="text-[11px] font-semibold">Sample Company LLC</p>
+          <p className="text-[10px] text-slate-500 dark:text-slate-400">Primary books · connected</p>
+        </div>
+        <span className="rounded-full bg-emerald-50 px-2 py-0.5 text-[9px] font-medium text-emerald-700 dark:bg-emerald-500/15 dark:text-emerald-300">
+          Connected
+        </span>
+      </div>
+      <div className={`${panel} overflow-hidden`}>
+        <p className={head}>Entity mapping</p>
+        <table className="w-full text-left text-[10.5px]">
+          <thead className="bg-slate-50 text-slate-500 dark:bg-slate-900/40 dark:text-slate-400">
+            <tr>
+              <th className="px-3 py-1.5 font-medium">Type</th>
+              <th className="px-3 py-1.5 font-medium">Name</th>
+              <th className="px-3 py-1.5 font-medium">QBO ID</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-slate-100 dark:divide-slate-700">
+            {mappings.map(([type, name, id]) => (
+              <tr key={name}>
+                <td className="px-3 py-1.5 text-slate-500 dark:text-slate-400">{type}</td>
+                <td className="px-3 py-1.5">{name}</td>
+                <td className="px-3 py-1">
+                  <span className="inline-block w-14 rounded border border-slate-200 bg-white px-1.5 py-0.5 font-mono text-[10px] dark:border-slate-600 dark:bg-slate-900">
+                    {id}
+                  </span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div className={panel}>
+        <p className={head}>Vendor bill accounts</p>
+        <ul className="divide-y divide-slate-100 text-[10.5px] dark:divide-slate-700">
+          {accounts.map(([k, v]) => (
+            <li key={k} className="flex items-center justify-between gap-2 px-3 py-1.5">
+              <span className="text-slate-500 dark:text-slate-400">{k}</span>
+              <span className="truncate font-medium">{v}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
+
 function QboSync() {
   const [state, setState] = useState<"idle" | "syncing" | "done">("idle");
   const sync = () => {
@@ -229,13 +329,14 @@ const VIEWS: Record<View, () => React.JSX.Element> = {
   dashboard: Dashboard,
   orders: Orders,
   reports: Reports,
+  qboSetup: QboSetup,
   qbo: QboSync,
 };
 
 export function BrowserShowcase() {
   const [view, setView] = useState<View>("dashboard");
   const Current = VIEWS[view];
-  const title = NAV.find((n) => n.id === view)!.label;
+  const title = NAV.find((n) => n.view === view)!.label;
 
   return (
     <div className="flex flex-col items-center gap-4">
@@ -248,36 +349,40 @@ export function BrowserShowcase() {
             <span className="size-2.5 rounded-full bg-[#28C840]" />
           </span>
           <span className="mx-auto truncate rounded-md bg-white px-3 py-0.5 text-[10px] text-slate-500 dark:bg-slate-900 dark:text-slate-400">
-            portal.example.com/{view}
+            portal.example.com/{view === "qboSetup" ? "qbo/setup" : view === "qbo" ? "qbo/sync" : view}
           </span>
         </div>
 
-        <div className="flex h-[360px] text-slate-900 dark:text-slate-100">
+        <div className="flex h-[440px] text-slate-900 dark:text-slate-100">
           {/* Sidebar rail */}
           <nav
             aria-label="Preview pages"
-            className="flex w-12 shrink-0 flex-col gap-1.5 border-r border-slate-200 bg-slate-50 p-1.5 sm:w-36 dark:border-slate-700 dark:bg-slate-900/60"
+            className="flex w-12 shrink-0 [scrollbar-width:none] flex-col gap-1 overflow-y-auto border-r border-slate-200 bg-slate-50 p-1.5 sm:w-36 dark:border-slate-700 dark:bg-slate-900/60"
           >
-            {NAV.map(({ id, label, icon: Icon, tone }) => {
-              const active = view === id;
+            {NAV.map(({ label, icon: Icon, tone, view: target }) => {
+              const active = target === view;
               return (
                 <button
-                  key={id}
+                  key={label}
                   type="button"
-                  onClick={() => setView(id)}
-                  aria-pressed={active}
-                  aria-label={label}
-                  className={`flex h-9 items-center gap-2 rounded-lg px-1.5 text-left text-[11px] font-medium shadow-sm transition-colors ${
+                  disabled={!target}
+                  onClick={() => target && setView(target)}
+                  aria-pressed={target ? active : undefined}
+                  aria-label={target ? label : `${label} (not in this preview)`}
+                  title={target ? undefined : "Not in this preview"}
+                  className={`flex h-8 shrink-0 items-center gap-2 rounded-lg px-1.5 text-left text-[11px] font-medium shadow-sm transition-colors ${
                     active
                       ? "bg-[#0F1830] text-white"
-                      : "bg-white text-slate-700 hover:bg-slate-100 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700"
+                      : target
+                        ? "bg-white text-slate-700 hover:bg-slate-100 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700"
+                        : "cursor-default bg-white/70 text-slate-400 dark:bg-slate-800/60 dark:text-slate-500"
                   }`}
                 >
                   <span
-                    className="grid size-6 shrink-0 place-items-center rounded-md text-white"
+                    className={`grid size-5 shrink-0 place-items-center rounded-md text-white ${target ? "" : "opacity-60"}`}
                     style={{ background: tone }}
                   >
-                    <Icon className="size-3.5" aria-hidden="true" />
+                    <Icon className="size-3" aria-hidden="true" />
                   </span>
                   <span className="hidden truncate sm:inline">{label}</span>
                 </button>
@@ -296,7 +401,9 @@ export function BrowserShowcase() {
           </div>
         </div>
       </div>
-      <p className="text-center text-[11px] text-subtle">Click around. All names and numbers are sample data.</p>
+      <p className="text-center text-[11px] text-subtle">
+        Click the highlighted pages. All names and numbers are sample data.
+      </p>
     </div>
   );
 }
