@@ -127,6 +127,6 @@ export const volunteering: EarlyRole[] = [
     title: "Volunteer",
     dates: "2012 – 2013",
     location: "Laguna Beach, CA",
-    note: "Cleaned up local beaches and the farmers market parking lot.",
+    note: "Cleaned the streets and beaches of Laguna Beach.",
   },
 ];
