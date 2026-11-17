@@ -12,9 +12,9 @@ export const experience: Experience[] = [
         title: "Chief Operating Officer",
         start: "Dec 2025",
         summary:
-          "Took over the rest of the business on top of finance, operations, and IT: federal taxes, compliance, vehicle registrations, product pricing, and the company website.",
+          "Took over the rest of the business on top of finance, operations, and IT: federal taxes, compliance, vehicle registrations, pricing strategy, and software development.",
         kept: ["IT", "Operations", "Finance"],
-        added: ["Taxes & compliance", "Pricing", "Website"],
+        added: ["Taxes & compliance", "Pricing strategy", "Software development"],
       },
       {
         title: "Chief Financial Officer",
