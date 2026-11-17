@@ -18,16 +18,6 @@ export const projects: Project[] = [
     showcase: "phone",
   },
   {
-    id: "windows-game",
-    name: "Windows Game",
-    category: "Game",
-    status: "Gameplay complete",
-    period: "Nov 2025 – Present",
-    progress: 85,
-    summary: "A desktop game for Windows, built in Unity. Gameplay is complete, and I'm now working on the final art.",
-    stack: ["Unity", "C#"],
-  },
-  {
     id: "cmg-platform",
     name: "CMG Operations Platform",
     category: "Platform",
@@ -36,7 +26,19 @@ export const projects: Project[] = [
     progress: 85,
     summary:
       "The web platform I developed for Coastal Marketing Group. It handles orders, invoicing, pricing, and automated reporting, syncs with QuickBooks Online, and runs the company website and partner portal.",
-    stack: ["Next.js", "TypeScript", "PostgreSQL"],
+    stack: ["Next.js", "TypeScript", "PostgreSQL", "QuickBooks Online"],
+    showcase: "browser",
+  },
+  {
+    id: "windows-game",
+    name: "Windows Game",
+    category: "Game",
+    status: "Gameplay complete",
+    period: "Nov 2025 – Present",
+    progress: 85,
+    summary: "A desktop game for Windows, built in Unity. Gameplay is complete, and I'm now working on the final art.",
+    stack: ["Unity", "C#"],
+    wide: true,
   },
   {
     id: "usv",

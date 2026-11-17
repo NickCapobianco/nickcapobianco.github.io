@@ -57,7 +57,9 @@ export type Project = {
   details?: string[];
   stack: string[];
   /** An interactive preview shown beside the card (generic, nothing proprietary). */
-  showcase?: "phone";
+  showcase?: "phone" | "browser";
+  /** Full-width horizontal card (no preview). */
+  wide?: boolean;
   /** Optional photo, for finished work that is fine to show. */
   image?: { src: string; alt: string };
 };

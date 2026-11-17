@@ -9,6 +9,7 @@ import { Section } from "../ui/Section";
 import { Reveal } from "../ui/Reveal";
 import { ProgressBar } from "../ui/ProgressBar";
 import { PhoneShowcase } from "../projects/PhoneShowcase";
+import { BrowserShowcase } from "../projects/BrowserShowcase";
 
 type Category = (typeof projectCategories)[number];
 
@@ -85,14 +86,23 @@ function ProjectBody({ project }: { project: Project }) {
 /** A wide card with an interactive preview beside the text. */
 function ShowcaseCard({ project }: { project: Project }) {
   return (
-    <article id={`project-${project.id}`} className="grid scroll-mt-24 overflow-hidden card md:grid-cols-[1fr_1.1fr]">
+    <article
+      id={`project-${project.id}`}
+      className={`grid scroll-mt-24 overflow-hidden card ${
+        project.showcase === "browser" ? "lg:grid-cols-[minmax(0,0.75fr)_minmax(0,1.6fr)]" : "md:grid-cols-[1fr_1.1fr]"
+      }`}
+    >
       <div className="flex flex-col p-6 sm:p-8">
         <ProjectBody project={project} />
       </div>
-      <div className="relative border-t border-line bg-surface-2/70 px-4 py-8 md:border-t-0 md:border-l">
+      <div
+        className={`relative border-t border-line bg-surface-2/70 px-4 py-8 ${
+          project.showcase === "browser" ? "lg:border-t-0 lg:border-l" : "md:border-t-0 md:border-l"
+        }`}
+      >
         <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-grid opacity-60" />
         <div className="no-print relative">
-          <PhoneShowcase />
+          {project.showcase === "browser" ? <BrowserShowcase /> : <PhoneShowcase />}
         </div>
       </div>
     </article>
@@ -103,9 +113,19 @@ function ProjectCard({ project }: { project: Project }) {
   return (
     <article
       id={`project-${project.id}`}
-      className="group flex h-full scroll-mt-24 flex-col overflow-hidden card transition-[border-color,box-shadow] hover:border-line-strong hover:shadow-float"
+      className={`group flex h-full scroll-mt-24 flex-col overflow-hidden card transition-[border-color,box-shadow] hover:border-line-strong hover:shadow-float ${
+        project.wide ? "md:flex-row" : ""
+      }`}
     >
-      <Cover project={project} />
+      <div
+        className={
+          project.wide
+            ? "md:w-2/5 md:shrink-0 md:[&>div]:aspect-auto md:[&>div]:h-full md:[&>div]:border-r md:[&>div]:border-b-0"
+            : ""
+        }
+      >
+        <Cover project={project} />
+      </div>
       <div className="flex flex-1 flex-col p-6">
         <ProjectBody project={project} />
       </div>
@@ -176,7 +196,7 @@ export function Projects() {
               <ShowcaseCard project={p} />
             </Reveal>
           ) : (
-            <Reveal key={p.id} delay={(i % 2) * 60} className="h-full">
+            <Reveal key={p.id} delay={(i % 2) * 60} className={p.wide ? "h-full md:col-span-2" : "h-full"}>
               <ProjectCard project={p} />
             </Reveal>
           ),
