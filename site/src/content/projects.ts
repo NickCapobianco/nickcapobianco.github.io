@@ -12,7 +12,8 @@ export const projects: Project[] = [
     status: "In development",
     period: "Jun 2026 – Present",
     progress: 85,
-    summary: "A mobile app I'm designing and developing. More once it launches.",
+    summary:
+      "A mobile app I'm designing and developing. The preview here is just the tip of the iceberg. The full app comes out at launch.",
     stack: ["Kotlin", "Jetpack Compose"],
     showcase: "phone",
   },

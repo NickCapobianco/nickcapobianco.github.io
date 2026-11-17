@@ -278,7 +278,7 @@ export function PhoneShowcase() {
           </nav>
         </div>
       </div>
-      <p className="text-center text-[11px] text-subtle">Tap around: Home, Health, and Blueprint</p>
+      <p className="text-center text-[11px] text-subtle">Tip of the iceberg: three screens of many</p>
     </div>
   );
 }
