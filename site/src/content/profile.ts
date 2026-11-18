@@ -14,10 +14,9 @@ export const profile = {
   about: [
     "I'm the Chief Operating Officer at Coastal Marketing Group. I joined in 2023 doing part-time IT and now lead the company's operations, finance, and technology. I developed the web platform the company runs on and lead most of our process improvements.",
     "Before CMG I was a systems design verification engineer at Western Digital, testing enterprise SSD firmware. Before that I tutored university mathematics and physics. I earned my M.S. in Computer Science at UNLV, finishing half of it while living in Japan, and my B.S. in Computer Engineering at Cal State Fullerton.",
-    "Outside of work I stay active. I train, run Spartan races, hike, and get to the beach as often as I can. I also play guitar, play video games, travel, and cook.",
+    "Outside of work I stay active. I train, hike, and get to the beach as often as I can. I also play guitar, play video games, travel, and cook.",
   ],
   interests: [
-    "Spartan races",
     "Working out",
     "Hiking",
     "Rock climbing",
