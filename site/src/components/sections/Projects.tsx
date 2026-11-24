@@ -189,7 +189,7 @@ export function Projects() {
       index="03"
       eyebrow="Projects"
       title="What I'm building."
-      intro="Software I'm developing now, plus robotics projects from school."
+      intro="Software I'm developing now, plus robotics projects."
       actions={filter}
     >
       <p className="sr-only" aria-live="polite">
