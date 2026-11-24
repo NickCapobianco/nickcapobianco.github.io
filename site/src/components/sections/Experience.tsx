@@ -144,7 +144,7 @@ function EarlyList({ jobs }: { jobs: EarlyRole[] }) {
               <span className="text-muted"> · {job.company}</span>
               {job.location ? <span className="text-subtle"> · {job.location}</span> : null}
             </p>
-            {job.note ? <p className="mt-0.5 text-sm text-muted">{job.note}</p> : null}
+            {job.note ? <p className="mt-0.5 text-sm text-muted">{bullet(job.note)}</p> : null}
           </div>
           {job.dates ? <p className="font-mono text-xs text-subtle sm:pt-1 sm:text-right">{job.dates}</p> : null}
         </li>
