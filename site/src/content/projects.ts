@@ -24,8 +24,7 @@ export const projects: Project[] = [
     status: "In development",
     period: "Mar 2026 – Present",
     progress: 85,
-    summary:
-      "The web platform I developed to run Coastal Marketing Group's operations, along with the company website.",
+    summary: "The software I created that Coastal Marketing Group runs on, along with the company website.",
     details: [
       "Tracks every order from purchase order to invoice",
       "Formula-based pricing with a standard monthly price sheet",

@@ -7,12 +7,12 @@ export const profile = {
   companyUrl: "https://coastal-marketing.com",
   siteUrl: "https://nickcapobianco.github.io",
   headline: "Engineer and operator.",
-  lead: "I lead operations at Coastal Marketing Group and develop the software the company runs on. My background is computer engineering, firmware validation, and full-stack development.",
+  lead: "I lead operations at Coastal Marketing Group and created the software the company runs on. My background is computer engineering, firmware validation, and full-stack development.",
   description:
     "Nick Capobianco, COO at Coastal Marketing Group. Engineer with an M.S. in Computer Science from UNLV and a B.S. in Computer Engineering from Cal State Fullerton.",
   rotatingRoles: ["Chief Operating Officer", "Software Engineer", "Microsoft 365 Administrator", "Game Designer"],
   about: [
-    "I'm the Chief Operating Officer at Coastal Marketing Group. I joined in 2023 doing part-time IT and now lead the company's operations, finance, and technology. I developed the web platform the company runs on and lead most of our process improvements.",
+    "I'm the Chief Operating Officer at Coastal Marketing Group. I joined in 2023 doing part-time IT and now lead the company's operations, finance, and technology. I created the software the company runs on and lead most of our process improvements.",
     "Before CMG I was a systems design verification engineer at Western Digital, testing enterprise SSD firmware. Before that I tutored university mathematics and physics. I earned my M.S. in Computer Science at UNLV, finishing half of it while living in Japan, and my B.S. in Computer Engineering at Cal State Fullerton.",
     "Outside of work I stay active. I train, hike, and get to the beach as often as I can. I also play guitar and video games, travel, and cook.",
   ],
