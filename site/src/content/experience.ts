@@ -69,7 +69,8 @@ export const experience: Experience[] = [
       { title: "Systems Design Verification Engineering Intern", start: "Jun 2020", end: "Aug 2020" },
     ],
     highlights: [
-      "Debugged and validated E1.S and M.2 drives in the Enterprise SSD division on a 200-person team",
+      "Worked in a small group within the 200-person Enterprise SSD division, handling firmware for B2B clients including Amazon, Facebook, and Teledyne",
+      "Debugged and validated E1.S and M.2 drives",
       "Automated test execution in Python for Microsoft, Facebook, and AWS programs",
       "Triaged firmware and script failures in JIRA and maintained test documentation",
       "Ran validation testing against drive specifications on Ubuntu",
