@@ -11,18 +11,10 @@ function range(start: string, end?: string) {
   return `${start} – ${end ?? "Present"}`;
 }
 
-function CompanyLogo({ item }: { item: ExperienceItem }) {
-  return (
-    <span className="grid size-12 shrink-0 place-items-center overflow-hidden rounded-xl border border-line bg-white p-1.5">
-      <Image src={item.logo} alt="" width={40} height={40} className="size-full object-contain" />
-    </span>
-  );
-}
-
 function RoleLadder({ item }: { item: ExperienceItem }) {
   if (item.roles.length < 2) return null;
   return (
-    <ol className="relative mt-6 space-y-0" aria-label={`Roles at ${item.company}`}>
+    <ol className="relative mt-4 space-y-0" aria-label={`Roles at ${item.company}`}>
       {item.roles.map((role, i) => {
         const current = !role.end;
         return (
@@ -68,93 +60,113 @@ function RoleLadder({ item }: { item: ExperienceItem }) {
   );
 }
 
+/** Left column of a job card: logo or initial, company, dates, and location. */
+function JobMeta({
+  company,
+  url,
+  logo,
+  dates,
+  location,
+}: {
+  company: string;
+  url?: string;
+  logo?: string;
+  dates?: string;
+  location?: string;
+}) {
+  return (
+    <aside className="flex items-start gap-3 md:flex-col md:gap-2.5">
+      <span className="grid size-11 shrink-0 place-items-center overflow-hidden rounded-xl border border-line bg-white p-1.5">
+        {logo ? (
+          <Image src={logo} alt="" width={36} height={36} className="size-full object-contain" />
+        ) : (
+          <span className="text-sm font-semibold text-zinc-500">{company[0]}</span>
+        )}
+      </span>
+      <div className="min-w-0">
+        {url ? (
+          <a
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-1 text-sm font-semibold text-fg hover:text-accent"
+          >
+            {company}
+            <ArrowUpRight className="size-3.5 opacity-60 transition group-hover:opacity-100" aria-hidden="true" />
+          </a>
+        ) : (
+          <p className="text-sm font-semibold text-fg">{company}</p>
+        )}
+        {dates ? <p className="mt-0.5 font-mono text-xs text-muted">{dates}</p> : null}
+        {location ? (
+          <p className="mt-0.5 flex items-center gap-1 text-xs text-subtle">
+            <MapPin className="size-3" aria-hidden="true" />
+            {location}
+          </p>
+        ) : null}
+      </div>
+    </aside>
+  );
+}
+
+/** A full-width job card: details on the left, the work reading across on the right. */
 function ExperienceCard({ item, featured }: { item: ExperienceItem; featured?: boolean }) {
   const first = item.roles[item.roles.length - 1];
   const latest = item.roles[0];
   const multi = item.roles.length > 1;
 
   return (
-    <article className={`card p-5 sm:p-7 ${featured ? "ring-1 ring-accent/20" : ""}`}>
-      <header className="flex gap-4">
-        <CompanyLogo item={item} />
-        <div className="min-w-0 flex-1">
-          <div className="flex flex-wrap items-start justify-between gap-x-4 gap-y-1">
-            <div className="min-w-0">
-              <h3 className="text-lg font-semibold tracking-tight text-fg">{latest.title}</h3>
-              {item.url ? (
-                <a
-                  href={item.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group inline-flex items-center gap-1 text-sm font-medium text-muted hover:text-accent"
-                >
-                  {item.company}
-                  <ArrowUpRight className="size-3.5 opacity-60 transition group-hover:opacity-100" aria-hidden="true" />
-                </a>
-              ) : (
-                <p className="text-sm font-medium text-muted">{item.company}</p>
-              )}
-            </div>
-            <div className="text-left sm:ml-auto sm:text-right">
-              <p className="font-mono text-xs text-muted">
-                {item.dates ?? range(multi ? first.start : latest.start, latest.end)}
-              </p>
-              <p className="mt-0.5 flex items-center gap-1 text-xs text-subtle sm:justify-end">
-                <MapPin className="size-3" aria-hidden="true" />
-                {item.location}
-              </p>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      <RoleLadder item={item} />
-
-      <ul className="mt-6 space-y-2.5 text-[15px] leading-relaxed text-muted">
-        {item.highlights.map((h) => (
-          <li key={h.slice(0, 32)} className="flex gap-3">
-            <span aria-hidden="true" className="mt-[0.6em] size-1 shrink-0 rounded-full bg-accent" />
-            <span>{bullet(h)}</span>
-          </li>
-        ))}
-      </ul>
-
-      {item.tools?.length ? (
-        <ul className="mt-6 flex flex-wrap gap-1.5" aria-label="Tools">
-          {item.tools.map((t) => (
-            <li key={t} className="chip">
-              {t}
+    <article
+      className={`grid gap-5 card p-5 sm:p-7 md:grid-cols-[13rem_minmax(0,1fr)] md:gap-8 ${
+        featured ? "ring-1 ring-accent/20" : ""
+      }`}
+    >
+      <JobMeta
+        company={item.company}
+        url={item.url}
+        logo={item.logo}
+        dates={item.dates ?? range(multi ? first.start : latest.start, latest.end)}
+        location={item.location}
+      />
+      <div className="min-w-0">
+        <h3 className="text-lg font-semibold tracking-tight text-fg">{latest.title}</h3>
+        <RoleLadder item={item} />
+        <ul className="mt-5 space-y-2.5 text-[15px] leading-relaxed text-muted">
+          {item.highlights.map((h) => (
+            <li key={h.slice(0, 32)} className="flex gap-3">
+              <span aria-hidden="true" className="mt-[0.6em] size-1 shrink-0 rounded-full bg-accent" />
+              <span>{bullet(h)}</span>
             </li>
           ))}
         </ul>
-      ) : null}
+        {item.tools?.length ? (
+          <ul className="mt-5 flex flex-wrap gap-1.5" aria-label="Tools">
+            {item.tools.map((t) => (
+              <li key={t} className="chip">
+                {t}
+              </li>
+            ))}
+          </ul>
+        ) : null}
+      </div>
     </article>
   );
 }
 
-/** One line per job: title, place, optional location, dates, and a short note. */
-function EarlyList({ jobs }: { jobs: EarlyRole[] }) {
+/** A smaller full-width card for early jobs and volunteering. */
+function EarlyCard({ job }: { job: EarlyRole }) {
   return (
-    <ul className="mt-4 divide-y divide-line">
-      {jobs.map((job) => (
-        <li key={job.company} className="grid gap-1 py-3.5 first:pt-0 last:pb-0 sm:grid-cols-[1fr_auto] sm:gap-x-6">
-          <div className="min-w-0">
-            <p className="text-[15px] text-fg">
-              <span className="font-semibold">{job.title}</span>
-              <span className="text-muted"> · {job.company}</span>
-              {job.location ? <span className="text-subtle"> · {job.location}</span> : null}
-            </p>
-            {job.note ? <p className="mt-0.5 text-sm text-muted">{bullet(job.note)}</p> : null}
-          </div>
-          {job.dates ? <p className="font-mono text-xs text-subtle sm:pt-1 sm:text-right">{job.dates}</p> : null}
-        </li>
-      ))}
-    </ul>
+    <article className="grid gap-3 card px-5 py-4 sm:px-7 md:grid-cols-[13rem_minmax(0,1fr)] md:gap-8">
+      <JobMeta company={job.company} dates={job.dates} location={job.location} />
+      <div className="min-w-0 md:pt-0.5">
+        <h3 className="font-semibold tracking-tight text-fg">{job.title}</h3>
+        {job.note ? <p className="mt-1 text-[15px] text-muted">{bullet(job.note)}</p> : null}
+      </div>
+    </article>
   );
 }
 
 export function Experience() {
-  const [current, ...past] = experience;
   return (
     <Section
       id="experience"
@@ -163,27 +175,26 @@ export function Experience() {
       title="Where I've worked."
       intro="I lead operations at Coastal Marketing Group. Before that I was a firmware validation engineer at Western Digital and a university mathematics and physics tutor. My first jobs were in retail, restaurants, and real estate."
     >
-      <div className="grid gap-5">
-        <Reveal>
-          <ExperienceCard item={current} featured />
-        </Reveal>
-        <div className="gap-5 lg:columns-2">
-          {past.map((item, i) => (
-            <Reveal key={item.id} delay={(i % 2) * 80} className="mb-5 break-inside-avoid">
-              <ExperienceCard item={item} />
-            </Reveal>
-          ))}
-        </div>
-        <Reveal>
-          <section aria-labelledby="early-title" className="card p-5 sm:p-7">
-            <h3 id="early-title" className="eyebrow">
-              Earlier experience
-            </h3>
-            <EarlyList jobs={earlyExperience} />
-            <h3 className="mt-8 eyebrow">Volunteering</h3>
-            <EarlyList jobs={volunteering} />
-          </section>
-        </Reveal>
+      <ol className="grid gap-4" aria-label="Jobs, newest first">
+        {experience.map((item, i) => (
+          <Reveal as="li" key={item.id}>
+            <ExperienceCard item={item} featured={i === 0} />
+          </Reveal>
+        ))}
+        {earlyExperience.map((job) => (
+          <Reveal as="li" key={job.company}>
+            <EarlyCard job={job} />
+          </Reveal>
+        ))}
+      </ol>
+
+      <h3 className="mt-12 mb-4 eyebrow">Volunteering</h3>
+      <div className="grid gap-4">
+        {volunteering.map((job) => (
+          <Reveal key={job.company}>
+            <EarlyCard job={job} />
+          </Reveal>
+        ))}
       </div>
     </Section>
   );
