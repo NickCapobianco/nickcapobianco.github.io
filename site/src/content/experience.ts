@@ -45,7 +45,7 @@ export const experience: Experience[] = [
       "Lead day-to-day operations, finance, pricing, and contractor commissions",
       "Spearheaded the move to Microsoft 365, SharePoint, OneDrive, and 1Password",
       "Automated bookkeeping in QuickBooks Online and manage payroll, taxes, and compliance",
-      "Created the software the company runs on for orders, invoicing, pricing, and reporting, along with its website and a partner portal for customers and contractors",
+      "Created the software the company runs on for orders, invoicing, pricing, and reporting, along with its website and a partner portal that customers and contractors can view",
     ],
     tools: ["Microsoft 365", "SharePoint", "1Password", "QuickBooks Online", "Next.js", "PostgreSQL"],
   },
