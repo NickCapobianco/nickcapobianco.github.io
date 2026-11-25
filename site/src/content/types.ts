@@ -22,7 +22,7 @@ export type Experience = {
   id: string;
   company: string;
   url?: string;
-  logo: string;
+  logo?: string;
   location: string;
   /** Shown instead of the computed date range when exact dates are unknown. */
   dates?: string;

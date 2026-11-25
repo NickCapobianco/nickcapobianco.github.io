@@ -78,16 +78,15 @@ export const experience: Experience[] = [
     tools: ["Python", "JIRA", "Linux"],
   },
   {
-    id: "tutoring",
-    company: "Cal State Fullerton & Irvine Valley College",
+    id: "csuf",
+    company: "Cal State Fullerton",
     url: "https://www.fullerton.edu/",
     logo: "/images/logos/csuf.webp",
-    location: "Fullerton & Irvine, CA",
-    dates: "About 2 years",
-    roles: [{ title: "Mathematics & Physics Tutor", start: "2018", end: "2020" }],
+    location: "Fullerton, CA",
+    roles: [{ title: "Mathematics & Physics Tutor", start: "Oct 2018", end: "Mar 2020" }],
     highlights: [
       "Tutored physics, programming, calculus, electrical engineering, and music",
-      "Partnered with the Assistant Dean of Natural Sciences and Mathematics to improve the Cal State Fullerton tutoring center",
+      "Partnered with the Assistant Dean of Natural Sciences and Mathematics to improve the tutoring center",
     ],
   },
   {
@@ -114,6 +113,13 @@ export const earlyExperience: EarlyRole[] = [
     dates: "May 2015 – Feb 2016",
     location: "Laguna Beach, CA",
     note: "Trained new servers and handled purchasing for the owner",
+  },
+  {
+    company: "Irvine Valley College",
+    title: "Tutor",
+    dates: "Oct 2014 – May 2015",
+    location: "Irvine, CA",
+    note: "Tutored students in mathematics and physics",
   },
   {
     company: "Keller Williams Realty",
