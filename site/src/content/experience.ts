@@ -119,7 +119,7 @@ export const earlyExperience: EarlyRole[] = [
     title: "Tutor",
     dates: "Oct 2014 – May 2015",
     location: "Irvine, CA",
-    note: "Tutored students in mathematics and physics",
+    note: "Tutored computer science, electrical engineering, math, and music",
   },
   {
     company: "Keller Williams Realty",
